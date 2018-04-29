@@ -1,8 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import PropTypes from "prop-types";
+import "./index.css";
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const TrelloCard = () => (
+    <div className="trello-card">
+      Card Here
+      {/* {files.map(file => (
+        <FileListItem key={file.id} file={file}/>
+      ))} */}
+    </div>
+);
+TrelloCard.propTypes = {
+  files: PropTypes.array
+};
+
+
+ReactDOM.render(<TrelloCard />, document.getElementById('root'));
+
