@@ -25,6 +25,27 @@ TrelloCard.propTypes = {
   files: PropTypes.array
 };
 
+const cards = [
+  {
+    title: "Phone Features",
+    items: [
+      "subwoofer",
+      "non-pourous",
+      "Wings",
+      "Seedless"
+    ]
+  },
+  {
+    title: "Plane Features",
+    items: [
+      "Large",
+      "Passengers pourous",
+      "Many windows",
+      "sleek",
+      "Fast"
+    ]
+  }
+];
 
 ReactDOM.render(<TrelloCard />, document.getElementById('root'));
 
