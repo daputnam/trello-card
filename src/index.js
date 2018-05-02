@@ -3,30 +3,29 @@ import ReactDOM from 'react-dom';
 import PropTypes from "prop-types";
 import "./index.css";
 
-const TrelloItem = ({item}) => {
+const TrelloItem = (props) => {
   return (
-    <div>item 1</div>
+    <div>> {props.item}</div>
   );
 };
+TrelloItem.propTypes = {
+  item: PropTypes.string
+}
 
-const TrelloCard = () => (
+const TrelloCard = ({card}) => (
     <div className="trello-card">
-      Card Title
-      Items
-      <TrelloItem />
+    {card.title}
+      {card.items.map(item => (
+        <TrelloItem item={item}/>
+      ))}
       Add Card...
-
-      {/* {files.map(file => (
-        <FileListItem key={file.id} file={file}/>
-      ))} */}
     </div>
 );
 TrelloCard.propTypes = {
   files: PropTypes.array
 };
 
-const cards = [
-  {
+const card = {
     title: "Phone Features",
     items: [
       "subwoofer",
@@ -34,18 +33,28 @@ const cards = [
       "Wings",
       "Seedless"
     ]
-  },
-  {
-    title: "Plane Features",
-    items: [
-      "Large",
-      "Passengers pourous",
-      "Many windows",
-      "sleek",
-      "Fast"
-    ]
   }
-];
+// const cards = [
+//   {
+//     title: "Phone Features",
+//     items: [
+//       "subwoofer",
+//       "non-pourous",
+//       "Wings",
+//       "Seedless"
+//     ]
+//   },
+//   {
+//     title: "Plane Features",
+//     items: [
+//       "Large",
+//       "Passengers pourous",
+//       "Many windows",
+//       "sleek",
+//       "Fast"
+//     ]
+//   }
+// ];
 
-ReactDOM.render(<TrelloCard />, document.getElementById('root'));
+ReactDOM.render(<TrelloCard card={card}/>, document.getElementById('root'));
 
