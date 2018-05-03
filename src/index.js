@@ -5,7 +5,7 @@ import "./index.css";
 
 const TrelloItem = (props) => {
   return (
-    <div>> {props.item}</div>
+    <div className="item">{props.item}</div>
   );
 };
 TrelloItem.propTypes = {
@@ -14,11 +14,11 @@ TrelloItem.propTypes = {
 
 const TrelloCard = ({card}) => (
     <div className="trello-card">
-    {card.title}
+    <h1>{card.title}</h1>
       {card.items.map(item => (
         <TrelloItem item={item}/>
       ))}
-      Add Card...
+      <div className="add-button">Add Card...</div>
     </div>
 );
 TrelloCard.propTypes = {
